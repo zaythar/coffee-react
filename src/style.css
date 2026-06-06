@@ -1,0 +1,231 @@
+/* =====================
+       CSS VARIABLES (colors, fonts, spacing)
+       Think of these like constants in code — change one, updates everywhere
+    ===================== */
+    :root {
+      --cream: #f5f0e8;
+      --espresso: #1a0f00;
+      --caramel: #c47a2b;
+      --warm-gray: #8a7f74;
+      --card-bg: #fffdf9;
+      --shadow: 0 4px 24px rgba(26, 15, 0, 0.10);
+    }
+
+    /* =====================
+       RESET & BASE
+       Clears browser default styles so you control everything
+    ===================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--cream);
+      color: var(--espresso);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+    }
+
+    /* =====================
+       HEADER
+    ===================== */
+    header {
+      background-color: var(--espresso);
+      color: var(--cream);
+      padding: 60px 40px 50px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      color: var(--cream);
+    }
+
+    header h1 span {
+      color: var(--caramel);
+    }
+
+    header p {
+      margin-top: 14px;
+      font-size: 1.05rem;
+      color: var(--warm-gray);
+      letter-spacing: 0.04em;
+    }
+
+    /* =====================
+       MAIN CONTENT AREA
+    ===================== */
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    /* =====================
+       SECTION LABEL
+    ===================== */
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--caramel);
+      margin-bottom: 32px;
+    }
+
+    /* =====================
+       CARDS GRID
+       display: grid is the modern way to lay things out
+    ===================== */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px;
+      align-items: stretch;
+      justify-content: start;
+    }
+    .filters {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .filter-btn {
+      padding: 8px 20px;
+      border-radius: 999px;
+      border: 2px solid var(--espresso);
+      background: transparent;
+      color: var(--espresso);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover {
+      background: var(--espresso);
+      color: var(--cream);
+    }
+
+    .filter-btn.active {
+      background: var(--espresso);
+      color: var(--cream);
+    }
+    /* =====================
+       INDIVIDUAL CARD
+    ===================== */
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 36px 32px;
+      box-shadow: var(--shadow);
+      border-top: 4px solid var(--caramel);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+      /* These three line fix the tags to bottom of card */
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Hover state — lifts the card */
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(26, 15, 0, 0.15);
+    }
+
+    .card-emoji {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .card .location {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      margin-bottom: 16px;
+    }
+
+    .card p {
+      font-size: 0.97rem;
+      line-height: 1.7;
+      color: #4a3f35;
+    }
+
+    .card-footer {
+      margin-top: auto;
+      padding-top: 20px;
+    }
+
+    .description {
+      font-size: 0.97rem;
+      line-height: 1.7;
+      color: #4a3f35;
+      flex: 1;
+    }
+    /* =====================
+       VIBE TAG
+       Small badge on each card
+    ===================== */
+    .vibe {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 5px 14px;
+      background-color: var(--espresso);
+      color: var(--cream);
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+        /* =====================
+       Recommendation Section
+       My recommendation to try
+    ===================== */
+    .recommendation {
+      margin-top: 14px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--caramel);
+      letter-spacing: 0.03em;
+    }
+    .try-label {
+      background-color: var(--caramel);
+      color: var(--cream);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin-right: 6px;
+    }
+    /* =====================
+       FOOTER
+    ===================== */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      font-size: 0.85rem;
+      color: var(--warm-gray);
+      border-top: 1px solid #e8e0d4;
+    }
+
+    .hidden {
+        display: none;
+    }
